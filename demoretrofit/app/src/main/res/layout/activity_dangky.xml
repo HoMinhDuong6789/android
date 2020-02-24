@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DangkyActivity">
+
+
+    <TextView
+        android:id="@+id/tvtitledangky"
+        android:textSize="40sp"
+        android:textColor="#153CCC"
+        android:layout_centerHorizontal="true"
+        android:text="dang ki sinh vien"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></TextView>
+    
+    <ImageView
+        android:id="@+id/imgvdangky"
+        android:scaleType="fitXY"
+        android:layout_centerHorizontal="true"
+        android:src="@android:drawable/ic_menu_report_image"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/tvtitledangky"
+        android:layout_width="180dp"
+        android:layout_height="180dp"></ImageView>
+
+    <EditText
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:hint="nhap vao tai khoan"
+        android:id="@+id/edittextdangkytk"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/imgvdangky"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></EditText>
+
+    <EditText
+        android:inputType="textPassword"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:hint="nhap vao mat khau"
+        android:id="@+id/edittextdkmatkhau"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/edittextdangkytk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></EditText>
+
+    <Button
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/edittextdkmatkhau"
+        android:text="Huy"
+        android:id="@+id/btnhuy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></Button>
+
+    <Button
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/edittextdkmatkhau"
+        android:text="Xac Nhan"
+        android:id="@+id/btnxacnhan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></Button>
+
+</RelativeLayout>
