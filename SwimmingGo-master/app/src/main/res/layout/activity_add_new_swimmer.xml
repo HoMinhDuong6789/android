@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.coach.AddNewSwimmer">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_profile_background"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingVertical="5sp">
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Tạo tài khoản mới"
+            android:textColor="@color/colorWhite"
+            android:textSize="26sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:paddingTop="10dp">
+
+            <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                android:id="@+id/number_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="100dp"
+                android:paddingRight="100dp"
+                app:backGroundColor="@color/colorBlue" />
+        </LinearLayout>
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/btn_create_workout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tạo"
+            android:layout_gravity="center"
+            android:background="@drawable/button_login_border"
+            android:textColor="@color/colorWhite"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="10sp"
+        android:weightSum="7">
+
+        <ListView
+            android:id="@+id/lv_swimmer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:dividerHeight="2px"></ListView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10sp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_finish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_login_border"
+                android:text="Xong"
+                android:textColor="@color/colorWhite" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

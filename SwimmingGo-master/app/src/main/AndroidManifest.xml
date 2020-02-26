@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.swimminggo"
+    android:installLocation="preferExternal">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo_swimminggo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".view.coach.ExerciseActivity"></activity>
+        <activity android:name=".view.coach.CreateLesson" />
+        <activity android:name=".view.coach.CreateSchedule" />
+        <activity android:name=".view.coach.ListExercise" />
+        <activity android:name=".view.coach.fragment.Library" />
+        <activity android:name=".view.Notification" />
+        <activity android:name=".view.coach.CreateRecordWithExercise" />
+        <activity android:name=".view.SwimmerProfile" />
+        <activity android:name=".view.coach.CreateRecordWithLesson" />
+        <activity android:name=".view.coach.CreateRecord" />
+        <activity android:name=".view.coach.LessonPlan" />
+        <activity android:name=".view.coach.CreateExercise" />
+        <activity android:name=".view.profile.ViewProfile" />
+        <activity android:name=".view.coach.AddAvailableSwimmer" />
+        <activity android:name=".view.coach.AddNewSwimmer" />
+        <activity android:name=".view.coach.AddSwimmer" />
+        <activity android:name=".view.swimmer.MainActivity" />
+        <activity android:name=".view.profile.EditProfile" />
+        <activity android:name=".view.ForgotPassword3" />
+        <activity android:name=".view.profile.ChangePassword" />
+        <activity android:name=".view.ForgotPassword2" />
+        <activity android:name=".view.ForgotPassword1" />
+        <activity android:name=".view.coach.MainActivity" />
+        <activity android:name=".view.Register" />
+        <activity android:name=".view.Login" />
+        <activity android:name=".view.SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

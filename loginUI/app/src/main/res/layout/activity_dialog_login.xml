@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".dialogloginActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/activity_rounded"
+    >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/noaccess"></ImageView>
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:fontFamily="monospace"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:text="Opps! Login Fail!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></TextView>
+
+    <Button
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:text="Try Again"
+        android:id="@+id/btntryagian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_roundeddialog"></Button>
+
+</LinearLayout>
