@@ -15,17 +15,30 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import retrofit.APIUtils;
+import retrofit.DataClient;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class DangkyActivity extends AppCompatActivity {
-    ImageView imgdangky;
-    EditText editUserName, editPassWord;
+    ImageView imgvdangky;
+    EditText edittextdkmatkhau, edittextdangkytk;
     Button btnhuy, btnxacnhan;
     int Requset_Code_Image = 123;
     String realpath;
+    String taikhoan;
+    String matkhau;
+
 
 
     @Override
@@ -33,24 +46,70 @@ public class DangkyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dangky);
         anhxa();
-        imgdangky.setOnClickListener(new View.OnClickListener() {
+        imgvdangky.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_PICK);
                 intent.setType("image/*");
                 startActivityForResult(intent, Requset_Code_Image);
-
             }
         });
-
         btnxacnhan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                File file = new File(realpath);
-                String file_path= file.getAbsolutePath();
+                taikhoan = edittextdkmatkhau.getText().toString();
+                matkhau = edittextdkmatkhau.getText().toString();
 
-                Log.d("file",file_path);
+               /* if(taikhoan.length()>0 && matkhau.length()>0){
+                File file = new File("E:\\_workspaces\\Android\\android\\demoretrofit\\app\\src\\main\\res\\drawable\\iconfinder_barcode_363078.png");
+                *//*String file_path= file.getAbsolutePath();
+                String [] mangtenfile = file_path.split("\\.");
+                file_path = mangtenfile[0] + System.currentTimeMillis()+"."+mangtenfile[1];*//*
+                RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"), file);
+                MultipartBody.Part body = MultipartBody.Part.createFormData("uploaded_file","E:\\_workspaces\\Android\\android\\demoretrofit\\app\\src\\main\\res\\drawable\\iconfinder_barcode_363078.png", requestBody);
+                DataClient dataClient = APIUtils.getDataClient();
+                Call<String> callback = dataClient.uploadPhoto(body);
+                callback.enqueue(new Callback<String>() {
+                    @Override
+                    public void onResponse(Call<String> call, Response<String> response) {
+                        if(response != null){
+                            String message = response.body();
+                            Log.d("BBBB", message);
+                            if(message.length() >0){*/
+                               DataClient insertData = APIUtils.getDataClient();
+                               Call<String> callback = insertData.InsertData(taikhoan, matkhau, "image/");
+                               callback.enqueue(new Callback<String>() {
+                                   @Override
+                                   public void onResponse(Call<String> call, Response<String> response) {
+                                       String result = response.body();
+                                       if(result.equals("Success")){
+                                           Toast.makeText(DangkyActivity.this, "Them thanh cong!", Toast.LENGTH_SHORT);
+
+
+
+                                           finish();
+                                       }
+                                   }
+
+                                   @Override
+                                   public void onFailure(Call<String> call, Throwable t) {
+                                       Log.d("FFFFFFFFFFFFFF",t.getMessage());
+                                   }
+                               });
+                            }
+
+                   /* }
+
+                    @Override
+                    public void onFailure(Call<String> call, Throwable t) {
+                        Log.d("FFFFFFFFFFFFFF",t.getMessage());
+                    }
+                });
+
+            }else{
+                    Toast.makeText(DangkyActivity.this, "Hay nhap du lieu thong tin", Toast.LENGTH_SHORT);
             }
+            }*/
         });
     }
 
@@ -67,29 +126,29 @@ public class DangkyActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == Requset_Code_Image && resultCode ==RESULT_OK){
+        if (requestCode == Requset_Code_Image && resultCode == RESULT_OK){
             Uri uri= data.getData();
             realpath = getRealPathFromURI(uri);
-            try {
-                InputStream inputStream = getContentResolver().openInputStream(uri);
-                Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
-                imgdangky.setImageBitmap(bitmap);
+            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.iconfinder_social_57_547459);
+            imgvdangky.setImageBitmap(bitmap);
+            /*try {
+                //InputStream inputStream = getContentResolver().openInputStream(uri);
+
             }catch (FileNotFoundException e){
                 e.printStackTrace();
-            }
+            }*/
         }
-
-
     }
 
     private void anhxa() {
-        imgdangky = findViewById(R.id.imgvdangky);
-        editUserName =  findViewById(R.id.edittexttaikhoan);
-        editPassWord =  findViewById(R.id.edittextmatkhau);
+        imgvdangky = findViewById(R.id.imgvdangky);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.iconfinder_social_57_547459);
+        imgvdangky.setImageBitmap(bitmap);
+        edittextdangkytk =  findViewById(R.id.edittextdangkytk);
+        edittextdkmatkhau =  findViewById(R.id.edittextdkmatkhau);
         btnhuy =  findViewById(R.id.btnhuy);
         btnxacnhan =  findViewById(R.id.btnxacnhan);
     }
