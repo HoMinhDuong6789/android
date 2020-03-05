@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_1"
+        android:icon="@drawable/abc_vector_test"
+        android:title="Lịch"
+        />
+    <item
+        android:id="@+id/item_2"
+        android:icon="@drawable/abc_vector_test"
+        android:title="Bài tập"
+        />
+    <item
+        android:id="@+id/item_3"
+        android:icon="@drawable/abc_vector_test"
+        android:title="Nhóm"
+        />
+    <item
+        android:id="@+id/item_4"
+        android:icon="@drawable/abc_vector_test"
+        android:title="Thư viện"
+        />
+    <item
+        android:id="@+id/item_5"
+        android:icon="@drawable/abc_vector_test"
+        android:title="Thêm"
+        />
+</menu>

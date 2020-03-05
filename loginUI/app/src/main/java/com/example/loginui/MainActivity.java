@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ProgressBar;
 
 public class MainActivity extends AppCompatActivity {
     Button btnlogginwithfb, btnlogginwithgoogle;
@@ -30,17 +31,15 @@ public class MainActivity extends AppCompatActivity {
     private void initComponent() {
         btnlogginwithfb= findViewById(R.id.btnlogginwithfb);
         btnlogginwithgoogle = findViewById(R.id.btnlogginwithgoogle);
-        progressDialog= new ProgressDialog(this);
-        progressDialog.setMessage("Vui lòng chờ");
-        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        progressDialog.setMax(100);
     }
 
     private void action() {
         btnlogginwithfb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialog= new ProgressDialog(MainActivity.this);
                 progressDialog.show();
+                progressDialog.setContentView(R.layout.progress_dialog);
                 Runnable progressRunnable = new Runnable() {
                     @Override
                     public void run() {
@@ -49,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 };
                 Handler pdCanceller = new Handler();
-                pdCanceller.postDelayed(progressRunnable, 200);
+                pdCanceller.postDelayed(progressRunnable, 5000);
             }
         });
 
@@ -83,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
         Button bntTryAgain = dialog.findViewById(R.id.btntryagian);
         dialog.show();
     }
-
     private void showDialogs(){
         Rect displayRectangle = new Rect();
         final Dialog dialog= new Dialog(this);
@@ -103,5 +101,12 @@ public class MainActivity extends AppCompatActivity {
         Handler pdCanceller = new Handler();
         pdCanceller.postDelayed(progressRunnable, 1000);
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        progressDialog.dismiss();
+    }
+
 
 }

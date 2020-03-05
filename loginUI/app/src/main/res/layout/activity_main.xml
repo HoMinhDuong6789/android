@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="128dp"
         android:layout_marginEnd="50dp"
         android:text="Sign In"
         android:textColor="#056ACC"
@@ -23,12 +23,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"></TextView>
 
+
+
+
     <Button
         android:id="@+id/btnlogginwithfb"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="136dp"
         android:layout_marginEnd="50dp"
         android:background="@drawable/btn_rounded"
         android:drawableLeft="@drawable/icfb"

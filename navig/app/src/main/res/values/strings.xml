@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">navig</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Name items natigation bar-->
+    <!--<string name="item1">Home</string>
+    <string name="item2">Recomend</string>
+    <string name="item3">Search</string>
+    <string name="item4">Detail</string>
+    <string name="item5">Setting</string>-->
+    <string name="item1">Trang Chủ</string>
+    <string name="item2">Gợi ý</string>
+    <string name="item3">Tìm kiếm</string>
+    <string name="item4">Chi tiết</string>
+    <string name="item5">Cài đặt</string>
+
+    <!--value Recomemmend Screen-->
+    <string name="what">Hôm bạn có muốn ăn món</string>
+</resources>
