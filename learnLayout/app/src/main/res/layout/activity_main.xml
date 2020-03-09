@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+
+    <TextView
+        android:id="@+id/txtRed"
+        android:layout_centerInParent="true"
+        android:background="#f20"
+        android:textColor="#faf8f8"
+        android:textSize="30sp"
+        android:text="Red"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_alignLeft="@id/txtRed"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/txtRed"
+        android:id="@+id/txtGreen"
+        android:background="#0CF32B"
+        android:textColor="#faf8f8"
+        android:textSize="30sp"
+        android:text="Green"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_alignRight="@id/txtGreen"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/txtGreen"
+        android:id="@+id/txtOrange"
+        android:background="#F68235"
+        android:textColor="#faf8f8"
+        android:textSize="30sp"
+        android:text="Orange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+
+        android:layout_toLeftOf="@id/txtRed"
+        android:layout_centerInParent="true"
+        android:id="@+id/txtBlue"
+        android:background="#1439BD"
+        android:textColor="#faf8f8"
+        android:textSize="30sp"
+        android:text="Green"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="*"
+    tools:context=".TableLayout">
+
+    <TableRow>
+
+        <TextView
+            android:layout_span="6"
+            android:background="#CF2626"
+            android:gravity="center"
+            android:text="Row 1"
+            android:textColor="#f20"
+            android:textSize="30sp" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_span="3"
+            android:background="#1BC58E"
+            android:gravity="center"
+            android:text="View 2 1"
+            android:textColor="#f20"
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_span="3"
+            android:background="#FFEB3B"
+            android:gravity="center"
+            android:text="View 2 2"
+            android:textColor="#f20"
+            android:textSize="30sp" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_span="2"
+            android:background="#107FB3"
+            android:gravity="center"
+            android:text="Row 1"
+            android:textColor="#f20"
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_span="2"
+            android:background="#C3A13A"
+            android:gravity="center"
+            android:text="Row 1"
+            android:textColor="#f20"
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_span="2"
+            android:background="#1BC58E"
+            android:gravity="center"
+            android:text="Row 1"
+            android:textColor="#f20"
+            android:textSize="30sp" />
+    </TableRow>
+
+
+</TableLayout>

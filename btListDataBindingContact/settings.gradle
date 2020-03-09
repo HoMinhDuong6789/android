@@ -1,0 +1,2 @@
+rootProject.name='btListDataBindingContact'
+include ':app'

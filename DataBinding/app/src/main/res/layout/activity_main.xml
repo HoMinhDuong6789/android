@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <data>
+        <variable
+            name="user"
+            type="com.example.databinding.model.User" />
+        <variable
+            name="temp"
+            type="com.example.databinding.TemperatureDate" />
+        <variable
+            name="presenter"
+            type="com.example.databinding.MainActivityPresenter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/txtfirstname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{user.firstName}" />
+
+        <EditText
+            android:id="@+id/txtlastname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{user.lastName}" />
+        <TextView
+            android:text="@={temp.celsius}"
+            android:id="@+id/tvTempreature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <!--Double.toString(temp.celsius) dinh dang conver-->
+        <EditText
+            android:text="@={temp.celsius}"
+            android:id="@+id/txtTempreature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> presenter.onShowData(temp)}"
+            android:text="Show" />
+    </LinearLayout>
+</layout>

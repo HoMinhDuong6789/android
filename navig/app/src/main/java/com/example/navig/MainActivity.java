@@ -13,7 +13,7 @@ import com.example.navig.fragmemt.Fragment2;
 import com.example.navig.fragmemt.Fragment3;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
     BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

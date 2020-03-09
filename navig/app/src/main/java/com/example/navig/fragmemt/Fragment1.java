@@ -13,12 +13,12 @@ import com.example.navig.R;
 
 public class Fragment1 extends Fragment {
     private static Fragment1 mFragment1;
-    public static Fragment1 mFragment1() {
+    /*public static Fragment1 mFragment1() {
         if (mFragment1 == null) {
             mFragment1 = new Fragment1();
         }
         return mFragment1;
-    }
+    }*/
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
