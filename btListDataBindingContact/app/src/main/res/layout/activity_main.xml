@@ -55,7 +55,7 @@
         <ListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            bind:items="@{infor.list}" />
+            bind:dong_lv="@{infor.list}" />
     </LinearLayout>
 
 </layout>
